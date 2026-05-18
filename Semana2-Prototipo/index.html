@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorios BIOS - UI/UX Prototype</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="blue">
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-dna"></i>
+                </div>
+                <div class="brand-text" style="font-size: 1.2rem;">Laboratorios BIOS</div>
+            </div>
+            <nav class="nav-menu">
+                <div class="nav-item active" data-target="prototype">
+                    <i class="fa-solid fa-desktop"></i>
+                    <span>Prototipo</span>
+                </div>
+                <div class="nav-item" data-target="patients">
+                    <i class="fa-solid fa-user-injured"></i>
+                    <span>Pacientes</span>
+                </div>
+                <div class="nav-item" data-target="branding">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Logotipos</span>
+                </div>
+                <div class="nav-item" data-target="styleguide">
+                    <i class="fa-solid fa-swatchbook"></i>
+                    <span>Guía de Estilo</span>
+                </div>
+                <div class="nav-item" data-target="components">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Componentes</span>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- Topbar -->
+            <header class="topbar">
+                <h2 class="page-title" id="current-page-title">Prototipo Funcional</h2>
+                
+                <div class="topbar-actions">
+                    <!-- Theme Switcher -->
+                    <div class="theme-switcher">
+                        <button class="theme-btn active" data-theme-value="blue">
+                            <span class="theme-indicator indicator-blue"></span> Azul Técnico
+                        </button>
+                        <button class="theme-btn" data-theme-value="teal">
+                            <span class="theme-indicator indicator-teal"></span> Teal Regenerativo
+                        </button>
+                    </div>
+
+                    <!-- Dark Mode Toggle -->
+                    <button id="dark-mode-toggle" class="btn btn-ghost" style="padding: 0.5rem; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+
+                    <!-- User Profile Placeholder -->
+                    <div class="user-profile">
+                        <div class="avatar">DR</div>
+                        <span style="font-weight: 500; font-size: 0.9rem;">Dr. Roberto</span>
+                        <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; color: var(--text-muted);"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Views Container -->
+            <div class="views-container">
+
+                <!-- VIEW: PROTOTYPE (Dashboard) -->
+                <section id="view-prototype" class="view-section active">
+                    <div class="section-header">
+                        <div>
+                            <h3 class="mb-1">Panel de Control</h3>
+                            <p class="text-muted">Resumen general de estudios y pacientes del día.</p>
+                        </div>
+                        <button class="btn btn-primary">
+                            <i class="fa-solid fa-plus"></i> Nuevo Estudio
+                        </button>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-4 mb-4">
+                        <div class="card stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-vial-virus"></i></div>
+                            <div class="stat-info">
+                                <h4>142</h4>
+                                <p>Muestras Hoy</p>
+                            </div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-icon" style="background-color: rgba(16, 185, 129, 0.1); color: var(--success);"><i class="fa-solid fa-check-double"></i></div>
+                            <div class="stat-info">
+                                <h4>89</h4>
+                                <p>Resultados Listos</p>
+                            </div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-icon" style="background-color: rgba(245, 158, 11, 0.1); color: var(--warning);"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                            <div class="stat-info">
+                                <h4>24</h4>
+                                <p>En Proceso</p>
+                            </div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                            <div class="stat-info">
+                                <h4>1,204</h4>
+                                <p>Pacientes Mes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3">
+                        <!-- Main Table Area -->
+                        <div class="card" style="grid-column: span 2;">
+                            <div class="section-header">
+                                <h4 style="margin: 0;">Últimos Resultados</h4>
+                                <a href="#" class="text-primary" style="font-size: 0.9rem; font-weight: 500;">Ver todos</a>
+                            </div>
+                            <div class="table-wrapper">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Estudio</th>
+                                            <th>Paciente</th>
+                                            <th>Análisis</th>
+                                            <th>Estado</th>
+                                            <th>Acción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>#B-8924</strong></td>
+                                            <td>Ana García López</td>
+                                            <td>Biometría Hemática</td>
+                                            <td><span class="badge badge-success">Completado</span></td>
+                                            <td><button class="btn btn-ghost" style="padding: 0.5rem;"><i class="fa-solid fa-file-pdf"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>#B-8925</strong></td>
+                                            <td>Carlos Mendoza</td>
+                                            <td>Química Sanguínea 35</td>
+                                            <td><span class="badge badge-warning">En Proceso</span></td>
+                                            <td><button class="btn btn-ghost" style="padding: 0.5rem;"><i class="fa-solid fa-eye"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>#B-8926</strong></td>
+                                            <td>Elena Rodríguez</td>
+                                            <td>Perfil Tiroideo</td>
+                                            <td><span class="badge badge-success">Completado</span></td>
+                                            <td><button class="btn btn-ghost" style="padding: 0.5rem;"><i class="fa-solid fa-file-pdf"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>#B-8927</strong></td>
+                                            <td>Luis Fernando Gómez</td>
+                                            <td>Examen General de Orina</td>
+                                            <td><span class="badge badge-primary">Recibido</span></td>
+                                            <td><button class="btn btn-ghost" style="padding: 0.5rem;"><i class="fa-solid fa-eye"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Actions -->
+                        <div class="card">
+                            <h4 class="mb-3">Búsqueda Rápida</h4>
+                            <div class="form-group">
+                                <input type="text" class="form-control mb-2" placeholder="Nombre de paciente o ID...">
+                                <button class="btn btn-primary" style="width: 100%;">Buscar Paciente</button>
+                            </div>
+                            
+                            <h4 class="mb-3 mt-4">Acceso Directo</h4>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <button class="btn btn-outline" style="justify-content: flex-start;"><i class="fa-solid fa-calendar-check" style="width: 20px;"></i> Agendar Cita</button>
+                                <button class="btn btn-outline" style="justify-content: flex-start;"><i class="fa-solid fa-file-invoice" style="width: 20px;"></i> Facturación</button>
+                                <button class="btn btn-outline" style="justify-content: flex-start;"><i class="fa-solid fa-boxes-stacked" style="width: 20px;"></i> Inventario</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW: PATIENTS -->
+                <section id="view-patients" class="view-section">
+                    <div class="section-header">
+                        <div>
+                            <h3 class="mb-1">Directorio de Pacientes</h3>
+                            <p class="text-muted">Gestión visual e interactiva de expedientes.</p>
+                        </div>
+                        <button class="btn btn-primary" id="btn-new-patient">
+                            <i class="fa-solid fa-user-plus"></i> Nuevo Paciente
+                        </button>
+                    </div>
+
+                    <div class="card mb-4" style="display: flex; gap: 1rem;">
+                        <input type="text" id="inp-search" class="form-control" placeholder="Buscar por nombre, correo o ID..." style="flex: 1;">
+                        <button class="btn btn-outline"><i class="fa-solid fa-filter"></i> Filtros</button>
+                    </div>
+
+                    <div class="card">
+                        <div class="table-wrapper">
+                            <table class="table" id="patients-table">
+                                <thead>
+                                    <tr>
+                                        <th>Expediente</th>
+                                        <th>Nombre Completo</th>
+                                        <th>Última Visita</th>
+                                        <th>Estudios</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="patients-tbody">
+                                    <!-- Populated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW: BRANDING (LOGOS) -->
+                <section id="view-branding" class="view-section">
+                    <h3 class="mb-2">Propuestas de Logotipo</h3>
+                    <p class="text-muted mb-4">Revisión de las alternativas gráficas para la identidad visual de Laboratorios BIOS.</p>
+                    
+                    <div class="card" style="height: 70vh; padding: 0; overflow: hidden; border-radius: var(--radius-lg);">
+                        <!-- Embed the PDF Document -->
+                        <object data="LABORATORIO%20BIOS.pdf" type="application/pdf" width="100%" height="100%">
+                            <div style="padding: 2rem; text-align: center;">
+                                <i class="fa-solid fa-file-pdf" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                                <p>Parece que tu navegador no soporta la previsualización directa de PDFs.</p>
+                                <a href="LABORATORIO%20BIOS.pdf" class="btn btn-primary mt-4" target="_blank">Abrir PDF con las Propuestas</a>
+                            </div>
+                        </object>
+                    </div>
+                </section>
+
+                <!-- VIEW: STYLE GUIDE -->
+                <section id="view-styleguide" class="view-section">
+                    <h3 class="mb-2">Guía de Estilo Visual</h3>
+                    <p class="text-muted mb-4">Esta sección detalla los tokens de diseño (colores y tipografía) basados en la propuesta seleccionada.</p>
+                    
+                    <div class="card mb-4">
+                        <h4 class="mb-3">Paleta de Colores Activa</h4>
+                        <div class="grid grid-cols-4">
+                            <div>
+                                <div class="color-swatch swatch-primary">Primario</div>
+                                <p class="mt-2 text-muted" style="font-size: 0.85rem;" id="hex-primary">#0045A6</p>
+                            </div>
+                            <div>
+                                <div class="color-swatch swatch-secondary">Secundario</div>
+                                <p class="mt-2 text-muted" style="font-size: 0.85rem;" id="hex-secondary">#0A1C2E</p>
+                            </div>
+                            <div>
+                                <div class="color-swatch swatch-accent">Acento</div>
+                                <p class="mt-2 text-muted" style="font-size: 0.85rem;" id="hex-accent">#1565C0</p>
+                            </div>
+                            <div>
+                                <div class="color-swatch swatch-bg">Fondo</div>
+                                <p class="mt-2 text-muted" style="font-size: 0.85rem;" id="hex-bg">#F4F7F9</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="mb-3">Tipografía Corporativa</h4>
+                        <div class="grid grid-cols-2">
+                            <div class="type-showcase">
+                                <p class="text-muted mb-2">Encabezados (Headings)</p>
+                                <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Outfit Bold</h1>
+                                <p style="font-family: 'Outfit', sans-serif;">Usada para títulos principales, transmite modernidad y claridad clínica.</p>
+                            </div>
+                            <div class="type-showcase">
+                                <p class="text-muted mb-2">Cuerpo de Texto (Body)</p>
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 500;">Inter Regular / Medium</div>
+                                <p>Una tipografía altamente legible, perfecta para interfaces de usuario densas en datos y resultados de laboratorio.</p>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            <h1>Heading H1 (Outfit)</h1>
+                            <h2>Heading H2 (Outfit)</h2>
+                            <h3>Heading H3 (Outfit)</h3>
+                            <p class="mt-2">Párrafo regular usando Inter. Este texto es un ejemplo de cómo se verán los bloques de contenido dentro del sistema, reportes y dashboards.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW: COMPONENTS -->
+                <section id="view-components" class="view-section">
+                    <h3 class="mb-2">Componentes Reutilizables</h3>
+                    <p class="text-muted mb-4">Librería de elementos UI construidos con HTML/CSS que mantienen consistencia en todo el sistema.</p>
+
+                    <div class="grid grid-cols-2 mb-4">
+                        <!-- Buttons Card -->
+                        <div class="card fade-in-up" style="animation-delay: 0.1s;">
+                            <h4 class="mb-4">Botones y Acciones</h4>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                                <button class="btn btn-primary hover-scale">Botón Primario</button>
+                                <button class="btn btn-primary hover-scale"><i class="fa-solid fa-download"></i> Descargar</button>
+                            </div>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                                <button class="btn btn-outline hover-scale">Secundario (Borde)</button>
+                                <button class="btn btn-ghost hover-scale">Transparente</button>
+                            </div>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <button class="btn btn-primary" disabled style="opacity: 0.5; cursor: not-allowed;">Deshabilitado</button>
+                            </div>
+                        </div>
+
+                        <!-- Form Card -->
+                        <div class="card fade-in-up" style="animation-delay: 0.2s;">
+                            <h4 class="mb-4">Formularios y Entradas</h4>
+                            <div class="form-group">
+                                <label class="form-label">Nombre del Paciente</label>
+                                <input type="text" class="form-control" placeholder="Ej. Juan Pérez">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Tipo de Estudio</label>
+                                <select class="form-control">
+                                    <option>Seleccionar...</option>
+                                    <option>Química Sanguínea</option>
+                                    <option>Biometría Hemática</option>
+                                    <option>Examen de Orina</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Complex Components -->
+                    <h4 class="mb-3 mt-4">Componentes Complejos (Tarjetas, Menús e Imágenes)</h4>
+                    <div class="grid grid-cols-3 mb-4">
+                        <!-- Image Card -->
+                        <div class="card hover-scale" style="padding: 0; overflow: hidden;">
+                            <div style="height: 150px; background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center; color: white;">
+                                <i class="fa-solid fa-microscope" style="font-size: 4rem; opacity: 0.8;"></i>
+                            </div>
+                            <div style="padding: 1.5rem;">
+                                <h4>Tarjeta de Servicio</h4>
+                                <p class="text-muted mb-2" style="font-size: 0.9rem;">Ejemplo de cómo se verían los servicios con imagen en la web pública de Laboratorios BIOS.</p>
+                                <button class="btn btn-outline" style="width: 100%;">Conocer más</button>
+                            </div>
+                        </div>
+
+                        <!-- Dropdown Menu Simulation -->
+                        <div class="card">
+                            <h4 class="mb-3">Menú Desplegable</h4>
+                            <div style="position: relative; width: 100%; border: 1px solid var(--border-light); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+                                <div style="padding: 1rem; display: flex; justify-content: space-between; cursor: pointer; border-bottom: 1px solid var(--border-light);">
+                                    <span>Opciones de Cuenta</span> <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <div class="nav-item hover-scale" style="border-radius: 0; padding: 0.8rem 1rem;">Mi Perfil</div>
+                                    <div class="nav-item hover-scale" style="border-radius: 0; padding: 0.8rem 1rem;">Configuración</div>
+                                    <div class="nav-item hover-scale" style="border-radius: 0; padding: 0.8rem 1rem; color: var(--danger);">Cerrar Sesión</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notification Alert -->
+                        <div class="card" style="display: flex; flex-direction: column; justify-content: center;">
+                            <div style="background-color: rgba(16, 185, 129, 0.1); border-left: 4px solid var(--success); padding: 1rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+                                <h5 style="color: var(--success); margin-bottom: 0.25rem;"><i class="fa-solid fa-circle-check"></i> Operación Exitosa</h5>
+                                <p style="font-size: 0.85rem; color: var(--text-main);">El estudio del paciente ha sido procesado correctamente en Laboratorios BIOS.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Badges & Alerts -->
+                    <div class="card">
+                        <h4 class="mb-4">Etiquetas y Estados (Badges)</h4>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                            <span class="badge badge-success">Completado</span>
+                            <span class="badge badge-warning">En Proceso</span>
+                            <span class="badge badge-primary">Nuevo Ingreso</span>
+                            <span class="badge badge-success" style="color: var(--danger); background-color: rgba(239, 68, 68, 0.1);">Rechazado</span>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="patient-modal">
+        <div class="modal-content card">
+            <div class="modal-header">
+                <h3 id="modal-title">Nuevo Paciente</h3>
+                <button class="btn btn-ghost close-modal" style="padding: 0.5rem;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Form Content injected via JS -->
+            </div>
+            <div class="modal-footer" style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 1rem;">
+                <button class="btn btn-outline close-modal">Cancelar</button>
+                <button class="btn btn-primary" id="save-patient-btn">Guardar Paciente</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="#" class="whatsapp-float hover-scale" title="Soporte Laboratorios BIOS">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Logic Script -->
+    <script src="js/app.js"></script>
+</body>
+</html>
